@@ -301,8 +301,9 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
 </header>
 
 <div class="phase-tabs">
-  <button class="ptab" onclick="setPhase('group',this)">⚽ Phase de groupes</button>
-  <button class="ptab active" onclick="setPhase('r16',this)">⚔️ 16èmes</button>
+  <button class="ptab" onclick="setPhase('group',this)">⚽ Groupes</button>
+  <button class="ptab active" onclick="setPhase('r16',this)">⚔️ Tour des 32</button>
+  <button class="ptab" onclick="setPhase('h8',this)">🔝 8èmes de finale</button>
   <button class="ptab" onclick="setPhase('qf',this)">🏅 Quarts</button>
   <button class="ptab" onclick="setPhase('sf',this)">🔥 Demis</button>
   <button class="ptab" onclick="setPhase('final',this)">🏆 Finale</button>
@@ -498,7 +499,7 @@ const STATIC = [
   {id:'s71',home:'Colombia',away:'Portugal',group:'K',matchday:3,hDZ:'01:30',dateDZ:'28/06/2026',type:'group',stadium_id:7},
   {id:'s72',home:'DR Congo',away:'Uzbekistan',group:'K',matchday:3,hDZ:'01:30',dateDZ:'28/06/2026',type:'group',stadium_id:8},
   // Tour des 32 — calendrier officiel FIFA (heure Algérie = ET + 5h)
-  {id:'r1',home:'Canada',away:'South Africa',group:'-',matchday:4,hDZ:'18:00',dateDZ:'28/06/2026',type:'r16',stadium_id:1},
+  {id:'r1',home:'South Africa',away:'Canada',group:'-',matchday:4,hDZ:'20:00',dateDZ:'28/06/2026',type:'r16',stadium_id:1},
   {id:'r2',home:'Brazil',away:'Japan',group:'-',matchday:4,hDZ:'18:00',dateDZ:'29/06/2026',type:'r16',stadium_id:2},
   {id:'r3',home:'Germany',away:'Paraguay',group:'-',matchday:4,hDZ:'21:30',dateDZ:'29/06/2026',type:'r16',stadium_id:3},
   {id:'r4',home:'Netherlands',away:'Morocco',group:'-',matchday:4,hDZ:'02:00',dateDZ:'30/06/2026',type:'r16',stadium_id:4},
@@ -514,14 +515,23 @@ const STATIC = [
   {id:'r14',home:'Australia',away:'Egypt',group:'-',matchday:5,hDZ:'19:00',dateDZ:'03/07/2026',type:'r16',stadium_id:14},
   {id:'r15',home:'Argentina',away:'Cape Verde',group:'-',matchday:5,hDZ:'23:00',dateDZ:'03/07/2026',type:'r16',stadium_id:15},
   {id:'r16',home:'Colombia',away:'Ghana',group:'-',matchday:5,hDZ:'02:30',dateDZ:'04/07/2026',type:'r16',stadium_id:16},
-  // Quarts
-  {id:'q1',home:'W R1',away:'W R2',group:'-',matchday:6,hDZ:'20:00',dateDZ:'07/07/2026',type:'qf',stadium_id:1},
-  {id:'q2',home:'W R3',away:'W R4',group:'-',matchday:6,hDZ:'00:00',dateDZ:'08/07/2026',type:'qf',stadium_id:2},
-  {id:'q3',home:'W R5',away:'W R6',group:'-',matchday:6,hDZ:'20:00',dateDZ:'08/07/2026',type:'qf',stadium_id:3},
-  {id:'q4',home:'W R7',away:'W R8',group:'-',matchday:6,hDZ:'00:00',dateDZ:'09/07/2026',type:'qf',stadium_id:4},
-  // Demis
-  {id:'sf1',home:'W Q1',away:'W Q2',group:'-',matchday:7,hDZ:'02:00',dateDZ:'15/07/2026',type:'sf',stadium_id:1},
-  {id:'sf2',home:'W Q3',away:'W Q4',group:'-',matchday:7,hDZ:'02:00',dateDZ:'16/07/2026',type:'sf',stadium_id:2},
+  // 8èmes de finale (4-7 juillet — heure DZ = ET + 5h)
+  {id:'h1',home:'Canada',away:'W Pays-Bas/Maroc',group:'-',matchday:6,hDZ:'18:00',dateDZ:'04/07/2026',type:'h8',stadium_id:1},
+  {id:'h2',home:'Paraguay',away:'W Côte d\'Ivoire/Norvège',group:'-',matchday:6,hDZ:'22:00',dateDZ:'04/07/2026',type:'h8',stadium_id:2},
+  {id:'h3',home:'Brazil',away:'W France/Suède',group:'-',matchday:6,hDZ:'21:00',dateDZ:'05/07/2026',type:'h8',stadium_id:3},
+  {id:'h4',home:'W Mexique/Équateur',away:'W Angleterre/RD Congo',group:'-',matchday:6,hDZ:'01:00',dateDZ:'06/07/2026',type:'h8',stadium_id:4},
+  {id:'h5',home:'W Belgique/Sénégal',away:'W USA/Bosnie',group:'-',matchday:6,hDZ:'20:00',dateDZ:'06/07/2026',type:'h8',stadium_id:5},
+  {id:'h6',home:'W Espagne/Autriche',away:'W Portugal/Croatie',group:'-',matchday:6,hDZ:'01:00',dateDZ:'07/07/2026',type:'h8',stadium_id:6},
+  {id:'h7',home:'W Suisse/Algérie',away:'W Australie/Égypte',group:'-',matchday:6,hDZ:'17:00',dateDZ:'07/07/2026',type:'h8',stadium_id:7},
+  {id:'h8',home:'W Argentine/Cap-Vert',away:'W Colombie/Ghana',group:'-',matchday:6,hDZ:'21:00',dateDZ:'07/07/2026',type:'h8',stadium_id:8},
+  // Quarts de finale (10-11 juillet)
+  {id:'q1',home:'W H1',away:'W H2',group:'-',matchday:7,hDZ:'20:00',dateDZ:'10/07/2026',type:'qf',stadium_id:1},
+  {id:'q2',home:'W H3',away:'W H4',group:'-',matchday:7,hDZ:'00:00',dateDZ:'11/07/2026',type:'qf',stadium_id:2},
+  {id:'q3',home:'W H5',away:'W H6',group:'-',matchday:7,hDZ:'20:00',dateDZ:'11/07/2026',type:'qf',stadium_id:3},
+  {id:'q4',home:'W H7',away:'W H8',group:'-',matchday:7,hDZ:'00:00',dateDZ:'12/07/2026',type:'qf',stadium_id:4},
+  // Demi-finales (14-15 juillet)
+  {id:'sf1',home:'W Q1',away:'W Q2',group:'-',matchday:8,hDZ:'02:00',dateDZ:'15/07/2026',type:'sf',stadium_id:1},
+  {id:'sf2',home:'W Q3',away:'W Q4',group:'-',matchday:8,hDZ:'02:00',dateDZ:'16/07/2026',type:'sf',stadium_id:2},
   // Finale
   {id:'f1',home:'W SF1',away:'W SF2',group:'-',matchday:8,hDZ:'22:00',dateDZ:'19/07/2026',type:'final',stadium_id:1},
 ];
@@ -812,8 +822,13 @@ async function load(){
     updateTicker();
     updateDZ();
     render();
-    // Récupérer les matchs LIVE depuis KickoffAPI (temps réel)
-    liveMatches=await fetchKickoffLive();
+    // Récupérer les matchs LIVE — timeout 8s pour ne pas bloquer l'app
+    try{
+      liveMatches=await Promise.race([
+        fetchKickoffLive(),
+        new Promise(r=>setTimeout(()=>r([]),8000))
+      ]);
+    }catch(e){ liveMatches=[]; }
     renderLiveHero();
   }catch(e){
     allMatches=mergeData(null);
@@ -911,7 +926,7 @@ function render(){
   });
   if(q) list=list.filter(m=>(m.home+m.away).toLowerCase().includes(q));
 
-  const phaseNames={group:'Phase de groupes',r16:'16èmes de finale',qf:'Quarts de finale',sf:'Demi-finales',final:'Finale'};
+  const phaseNames={group:'Phase de groupes',r16:'Tour des 32',h8:'8èmes de finale',qf:'Quarts de finale',sf:'Demi-finales',final:'Finale'};
   if(!list.length){
     document.getElementById('matchList').innerHTML=`<div class="empty-ph"><span>⏳</span>Les matchs de la <b>${phaseNames[activePhase]}</b> apparaîtront ici.<br><small style="color:var(--muted)">Mis à jour automatiquement.</small></div>`;
     return;
@@ -1180,7 +1195,7 @@ function openModal(matchId){
       ${m._apiData.away_score!=null?`<div class="stat-row"><span class="stat-val">${m._apiData.away_score}</span><span class="stat-lbl">Buts ${m.away}</span></div>`:''}
     </div>` : '';
 
-  const phaseLabels={group:`Groupe ${m.group} — Journée ${m.matchday}`,r16:'16ème de finale',qf:'Quart de finale',sf:'Demi-finale',final:'🏆 FINALE'};
+  const phaseLabels={group:`Groupe ${m.group} — Journée ${m.matchday}`,r16:'Tour des 32',h8:'8ème de finale',qf:'Quart de finale',sf:'Demi-finale',final:'🏆 FINALE'};
 
   document.getElementById('modalContent').innerHTML = `
     <div class="modal-header">
