@@ -384,7 +384,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
     <div class="ad-box" style="margin-bottom:16px">
       <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8052252811268828" data-ad-slot="3333333333" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
     </div>
-    <div class="rc-ttl">🇩🇿 Fennecs — Groupe J</div>
+    <div class="rc-ttl">🇩🇿 Fennecs — Parcours 2026</div>
     <div class="dz-card">
       <div class="dz-card-ttl">🇩🇿 Algérie 2026</div>
       <div class="dz-row">
@@ -398,6 +398,10 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
       <div class="dz-row">
         <div><div class="dz-opp">🇩🇿 Algérie vs Autriche 🇦🇹</div><div class="dz-date">27 juin • 03:00 DZ • beIN / ENTV</div></div>
         <div class="dz-sc" id="dzsc3">—</div>
+      </div>
+      <div class="dz-row" style="border-top:2px solid var(--gold);margin-top:4px;padding-top:8px">
+        <div><div class="dz-opp" style="color:var(--gold);font-weight:700">⚔️ Tour des 32 — 🇨🇭 Suisse vs Algérie 🇩🇿</div><div class="dz-date">3 juil • 04:00 DZ • beIN / ENTV</div></div>
+        <div class="dz-sc" id="dzsc4">—</div>
       </div>
     </div>
     <div class="rc-ttl">Publicité</div>
@@ -493,23 +497,23 @@ const STATIC = [
   {id:'s70',home:'Croatia',away:'Ghana',group:'L',matchday:3,hDZ:'22:00',dateDZ:'27/06/2026',type:'group',stadium_id:6},
   {id:'s71',home:'Colombia',away:'Portugal',group:'K',matchday:3,hDZ:'01:30',dateDZ:'28/06/2026',type:'group',stadium_id:7},
   {id:'s72',home:'DR Congo',away:'Uzbekistan',group:'K',matchday:3,hDZ:'01:30',dateDZ:'28/06/2026',type:'group',stadium_id:8},
-  // Tour des 32 — dates corrigées (heure Algérie UTC+1)
-  {id:'r1',home:'Germany',away:'Paraguay',group:'-',matchday:4,hDZ:'21:00',dateDZ:'29/06/2026',type:'r16',stadium_id:1},
-  {id:'r2',home:'France',away:'Sweden',group:'-',matchday:4,hDZ:'01:00',dateDZ:'30/06/2026',type:'r16',stadium_id:2},
-  {id:'r3',home:'South Africa',away:'Canada',group:'-',matchday:4,hDZ:'18:00',dateDZ:'30/06/2026',type:'r16',stadium_id:3},
-  {id:'r4',home:'Brazil',away:'Japan',group:'-',matchday:4,hDZ:'22:00',dateDZ:'30/06/2026',type:'r16',stadium_id:4},
-  {id:'r5',home:'Netherlands',away:'Morocco',group:'-',matchday:5,hDZ:'02:00',dateDZ:'01/07/2026',type:'r16',stadium_id:5},
-  {id:'r6',home:'Portugal',away:'Croatia',group:'-',matchday:5,hDZ:'18:00',dateDZ:'01/07/2026',type:'r16',stadium_id:6},
-  {id:'r7',home:'Spain',away:'Austria',group:'-',matchday:5,hDZ:'22:00',dateDZ:'01/07/2026',type:'r16',stadium_id:7},
-  {id:'r8',home:'Ivory Coast',away:'Norway',group:'-',matchday:5,hDZ:'02:00',dateDZ:'02/07/2026',type:'r16',stadium_id:8},
-  {id:'r9',home:'United States',away:'Bosnia and Herzegovina',group:'-',matchday:5,hDZ:'18:00',dateDZ:'02/07/2026',type:'r16',stadium_id:9},
-  {id:'r10',home:'Belgium',away:'Senegal',group:'-',matchday:5,hDZ:'22:00',dateDZ:'02/07/2026',type:'r16',stadium_id:10},
-  {id:'r11',home:'Mexico',away:'Ecuador',group:'-',matchday:5,hDZ:'02:00',dateDZ:'03/07/2026',type:'r16',stadium_id:11},
-  {id:'r12',home:'England',away:'DR Congo',group:'-',matchday:5,hDZ:'18:00',dateDZ:'03/07/2026',type:'r16',stadium_id:12},
-  {id:'r13',home:'Argentina',away:'Cape Verde',group:'-',matchday:5,hDZ:'22:00',dateDZ:'03/07/2026',type:'r16',stadium_id:13},
-  {id:'r14',home:'Australia',away:'Egypt',group:'-',matchday:5,hDZ:'02:00',dateDZ:'04/07/2026',type:'r16',stadium_id:14},
-  {id:'r15',home:'Switzerland',away:'Algeria',group:'-',matchday:5,hDZ:'18:00',dateDZ:'04/07/2026',type:'r16',stadium_id:15},
-  {id:'r16',home:'Colombia',away:'Ghana',group:'-',matchday:5,hDZ:'22:00',dateDZ:'04/07/2026',type:'r16',stadium_id:16},
+  // Tour des 32 — calendrier officiel FIFA (heure Algérie = ET + 5h)
+  {id:'r1',home:'Canada',away:'South Africa',group:'-',matchday:4,hDZ:'18:00',dateDZ:'28/06/2026',type:'r16',stadium_id:1},
+  {id:'r2',home:'Brazil',away:'Japan',group:'-',matchday:4,hDZ:'18:00',dateDZ:'29/06/2026',type:'r16',stadium_id:2},
+  {id:'r3',home:'Germany',away:'Paraguay',group:'-',matchday:4,hDZ:'21:30',dateDZ:'29/06/2026',type:'r16',stadium_id:3},
+  {id:'r4',home:'Netherlands',away:'Morocco',group:'-',matchday:4,hDZ:'02:00',dateDZ:'30/06/2026',type:'r16',stadium_id:4},
+  {id:'r5',home:'Ivory Coast',away:'Norway',group:'-',matchday:5,hDZ:'18:00',dateDZ:'30/06/2026',type:'r16',stadium_id:5},
+  {id:'r6',home:'France',away:'Sweden',group:'-',matchday:5,hDZ:'22:00',dateDZ:'30/06/2026',type:'r16',stadium_id:6},
+  {id:'r7',home:'Mexico',away:'Ecuador',group:'-',matchday:5,hDZ:'02:00',dateDZ:'01/07/2026',type:'r16',stadium_id:7},
+  {id:'r8',home:'England',away:'DR Congo',group:'-',matchday:5,hDZ:'17:00',dateDZ:'01/07/2026',type:'r16',stadium_id:8},
+  {id:'r9',home:'Belgium',away:'Senegal',group:'-',matchday:5,hDZ:'21:00',dateDZ:'01/07/2026',type:'r16',stadium_id:9},
+  {id:'r10',home:'United States',away:'Bosnia and Herzegovina',group:'-',matchday:5,hDZ:'01:00',dateDZ:'02/07/2026',type:'r16',stadium_id:10},
+  {id:'r11',home:'Spain',away:'Austria',group:'-',matchday:5,hDZ:'20:00',dateDZ:'02/07/2026',type:'r16',stadium_id:11},
+  {id:'r12',home:'Portugal',away:'Croatia',group:'-',matchday:5,hDZ:'00:00',dateDZ:'03/07/2026',type:'r16',stadium_id:12},
+  {id:'r13',home:'Switzerland',away:'Algeria',group:'-',matchday:5,hDZ:'04:00',dateDZ:'03/07/2026',type:'r16',stadium_id:13},
+  {id:'r14',home:'Australia',away:'Egypt',group:'-',matchday:5,hDZ:'19:00',dateDZ:'03/07/2026',type:'r16',stadium_id:14},
+  {id:'r15',home:'Argentina',away:'Cape Verde',group:'-',matchday:5,hDZ:'23:00',dateDZ:'03/07/2026',type:'r16',stadium_id:15},
+  {id:'r16',home:'Colombia',away:'Ghana',group:'-',matchday:5,hDZ:'02:30',dateDZ:'04/07/2026',type:'r16',stadium_id:16},
   // Quarts
   {id:'q1',home:'W R1',away:'W R2',group:'-',matchday:6,hDZ:'20:00',dateDZ:'07/07/2026',type:'qf',stadium_id:1},
   {id:'q2',home:'W R3',away:'W R4',group:'-',matchday:6,hDZ:'00:00',dateDZ:'08/07/2026',type:'qf',stadium_id:2},
@@ -522,8 +526,17 @@ const STATIC = [
   {id:'f1',home:'W SF1',away:'W SF2',group:'-',matchday:8,hDZ:'22:00',dateDZ:'19/07/2026',type:'final',stadium_id:1},
 ];
 
-// TV par match
-const TV={'MexicoSouth Africa':['beIN','M6'],'South KoreaCzech Republic':['beIN'],'CanadaBosnia and Herzegovina':['beIN','M6'],'United StatesParaguay':['beIN'],'QatarSwitzerland':['beIN','M6'],'BrazilMorocco':['beIN','M6'],'HaitiScotland':['beIN'],'AustraliaTurkey':['beIN'],'GermanyCuraçao':['beIN','M6'],'NetherlandsJapan':['beIN','M6'],'Ivory CoastEcuador':['beIN'],'SwedenTunisia':['beIN'],'SpainCape Verde':['beIN','M6'],'BelgiumEgypt':['beIN','M6'],'Saudi ArabiaUruguay':['beIN','M6'],'IranNew Zealand':['beIN'],'FranceSenegal':['beIN','M6'],'IraqNorway':['beIN','M6'],'ArgentinaAlgeria':['beIN'],'AustriaJordan':['beIN'],'PortugalDR Congo':['beIN','M6'],'EnglandCroatia':['beIN','M6'],'GhanaPanama':['beIN'],'UzbekistanColombia':['beIN'],'Czech RepublicSouth Africa':['beIN','M6'],'SwitzerlandBosnia and Herzegovina':['beIN','M6'],'CanadaQatar':['beIN'],'MexicoSouth Korea':['beIN'],'United StatesAustralia':['beIN','M6'],'ScotlandMorocco':['beIN','M6'],'BrazilHaiti':['beIN'],'TurkeyParaguay':['beIN'],'NetherlandsSweden':['beIN','M6'],'GermanyIvory Coast':['beIN','M6'],'EcuadorCuraçao':['beIN'],'TunisiaJapan':['beIN'],'SpainSaudi Arabia':['beIN','M6'],'BelgiumIran':['beIN','M6'],'UruguayCape Verde':['beIN'],'New ZealandEgypt':['beIN'],'ArgentinaAustria':['beIN','M6'],'FranceIraq':['beIN','M6'],'NorwaySenegal':['beIN'],'JordanAlgeria':['beIN'],'PortugalUzbekistan':['beIN','M6'],'EnglandGhana':['beIN','M6'],'PanamaCroatia':['beIN'],'ColombiaDR Congo':['beIN'],'ScotlandBrazil':['beIN','M6'],'MoroccoHaiti':['beIN','M6'],'Czech RepublicMexico':['beIN'],'South AfricaSouth Korea':['beIN'],'CuraçaoIvory Coast':['beIN'],'EcuadorGermany':['beIN','M6'],'JapanSweden':['beIN'],'TunisiaNetherlands':['beIN','M6'],'TurkeyUnited States':['beIN'],'ParaguayAustralia':['beIN'],'NorwayFrance':['beIN','M6'],'SenegalIraq':['beIN'],'Cape VerdeSaudi Arabia':['beIN'],'UruguaySpain':['beIN'],'EgyptIran':['beIN'],'New ZealandBelgium':['beIN'],'AlgeriaAustria':['beIN','ENTV'],'JordanArgentina':['beIN'],'PanamaEngland':['beIN','M6'],'CroatiaGhana':['beIN','M6'],'ColombiaPortugal':['beIN','M6'],'DR CongoUzbekistan':['beIN']};
+// TV par match (groupes + Tour des 32)
+const TV={
+// === Tour des 32 ===
+'CanadaSouth Africa':['beIN'],'BrazilJapan':['beIN','M6'],'GermanyParaguay':['beIN','M6'],
+'NetherlandsMorocco':['beIN','M6'],'Ivory CoastNorway':['beIN'],'FranceSweden':['beIN','M6'],
+'MexicoEcuador':['beIN'],'EnglandDR Congo':['beIN','M6'],'BelgiumSenegal':['beIN','M6'],
+'United StatesBosnia and Herzegovina':['beIN'],'SpainAustria':['beIN','M6'],
+'PortugalCroatia':['beIN','M6'],'SwitzerlandAlgeria':['beIN','ENTV'],
+'AustraliaEgypt':['beIN'],'ArgentinaCape Verde':['beIN','M6'],'ColombiaGhana':['beIN'],
+// === Phase de groupes ===
+'MexicoSouth Africa':['beIN','M6'],'South KoreaCzech Republic':['beIN'],'CanadaBosnia and Herzegovina':['beIN','M6'],'United StatesParaguay':['beIN'],'QatarSwitzerland':['beIN','M6'],'BrazilMorocco':['beIN','M6'],'HaitiScotland':['beIN'],'AustraliaTurkey':['beIN'],'GermanyCuraçao':['beIN','M6'],'NetherlandsJapan':['beIN','M6'],'Ivory CoastEcuador':['beIN'],'SwedenTunisia':['beIN'],'SpainCape Verde':['beIN','M6'],'BelgiumEgypt':['beIN','M6'],'Saudi ArabiaUruguay':['beIN','M6'],'IranNew Zealand':['beIN'],'FranceSenegal':['beIN','M6'],'IraqNorway':['beIN','M6'],'ArgentinaAlgeria':['beIN'],'AustriaJordan':['beIN'],'PortugalDR Congo':['beIN','M6'],'EnglandCroatia':['beIN','M6'],'GhanaPanama':['beIN'],'UzbekistanColombia':['beIN'],'Czech RepublicSouth Africa':['beIN','M6'],'SwitzerlandBosnia and Herzegovina':['beIN','M6'],'CanadaQatar':['beIN'],'MexicoSouth Korea':['beIN'],'United StatesAustralia':['beIN','M6'],'ScotlandMorocco':['beIN','M6'],'BrazilHaiti':['beIN'],'TurkeyParaguay':['beIN'],'NetherlandsSweden':['beIN','M6'],'GermanyIvory Coast':['beIN','M6'],'EcuadorCuraçao':['beIN'],'TunisiaJapan':['beIN'],'SpainSaudi Arabia':['beIN','M6'],'BelgiumIran':['beIN','M6'],'UruguayCape Verde':['beIN'],'New ZealandEgypt':['beIN'],'ArgentinaAustria':['beIN','M6'],'FranceIraq':['beIN','M6'],'NorwaySenegal':['beIN'],'JordanAlgeria':['beIN'],'PortugalUzbekistan':['beIN','M6'],'EnglandGhana':['beIN','M6'],'PanamaCroatia':['beIN'],'ColombiaDR Congo':['beIN'],'ScotlandBrazil':['beIN','M6'],'MoroccoHaiti':['beIN','M6'],'Czech RepublicMexico':['beIN'],'South AfricaSouth Korea':['beIN'],'CuraçaoIvory Coast':['beIN'],'EcuadorGermany':['beIN','M6'],'JapanSweden':['beIN'],'TunisiaNetherlands':['beIN','M6'],'TurkeyUnited States':['beIN'],'ParaguayAustralia':['beIN'],'NorwayFrance':['beIN','M6'],'SenegalIraq':['beIN'],'Cape VerdeSaudi Arabia':['beIN'],'UruguaySpain':['beIN'],'EgyptIran':['beIN'],'New ZealandBelgium':['beIN'],'AlgeriaAustria':['beIN','ENTV'],'JordanArgentina':['beIN'],'PanamaEngland':['beIN','M6'],'CroatiaGhana':['beIN','M6'],'ColombiaPortugal':['beIN','M6'],'DR CongoUzbekistan':['beIN']};
 
 // ISO drapeaux
 const ISO={'Mexico':'mx','South Africa':'za','South Korea':'kr','Czech Republic':'cz','Canada':'ca','Bosnia and Herzegovina':'ba','United States':'us','Paraguay':'py','Qatar':'qa','Switzerland':'ch','Brazil':'br','Morocco':'ma','Haiti':'ht','Scotland':'gb-sct','Australia':'au','Turkey':'tr','Germany':'de','Curaçao':'cw','Netherlands':'nl','Japan':'jp','Ivory Coast':'ci','Ecuador':'ec','Sweden':'se','Tunisia':'tn','Spain':'es','Cape Verde':'cv','Belgium':'be','Egypt':'eg','Saudi Arabia':'sa','Uruguay':'uy','Iran':'ir','New Zealand':'nz','France':'fr','Senegal':'sn','Iraq':'iq','Norway':'no','Argentina':'ar','Algeria':'dz','Austria':'at','Jordan':'jo','Portugal':'pt','DR Congo':'cd','England':'gb-eng','Croatia':'hr','Ghana':'gh','Panama':'pa','Uzbekistan':'uz','Colombia':'co'};
@@ -856,6 +869,7 @@ function updateDZ(){
     if(opp==='Argentina') document.getElementById('dzsc1').textContent=sc;
     else if(opp==='Jordan') document.getElementById('dzsc2').textContent=sc;
     else if(opp==='Austria') document.getElementById('dzsc3').textContent=sc;
+    else if(opp==='Switzerland'){ const el=document.getElementById('dzsc4'); if(el) el.textContent=sc; }
   });
 }
 
