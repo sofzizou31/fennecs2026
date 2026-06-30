@@ -23,11 +23,15 @@ public class MainActivity extends Activity {
         settings.setDomStorageEnabled(true);
         settings.setCacheMode(WebSettings.LOAD_DEFAULT);
         settings.setMediaPlaybackRequiresUserGesture(false);
+        // Permet les appels API (fetch) depuis le fichier HTML local
+        settings.setAllowUniversalAccessFromFileURLs(true);
+        settings.setAllowFileAccessFromFileURLs(true);
 
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient());
 
-        webView.loadUrl("https://fennecs2026.netlify.app/");
+        // Chargement depuis les assets locaux — aucun besoin de Netlify
+        webView.loadUrl("file:///android_asset/index.html");
     }
 
     @Override
