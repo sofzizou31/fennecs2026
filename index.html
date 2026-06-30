@@ -554,8 +554,6 @@ const ISO={'Mexico':'mx','South Africa':'za','South Korea':'kr','Czech Republic'
 // openfootball: CORS natif GitHub CDN — zéro proxy, zéro clé
 const API_URL='https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json';
 const API_FALLBACK='https://worldcup26.ir/get/games';
-const KICKOFF_KEY='ft_dev_sofz_2664584fa1507c6657241adfe49dffa6b02a88b2';
-const KICKOFF_LIVE='https://api.kickoffapi.com/api/v1/fixtures?live=all';
 let liveMatches=[];
 const PROXIES=[
   u=>`https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
@@ -659,39 +657,7 @@ function tvChips(h,a){
 }
 
 
-// ===== KICKOFFAPI LIVE =====
-async function fetchKickoffLive(){
-  // Essayer 2 variantes d'URL au cas où
-  const urls=[
-    'https://api.kickoffapi.com/api/v1/fixtures?live=all',
-    'https://api.kickoffapi.com/v1/fixtures?live=all'
-  ];
-  for(const url of urls){
-    try{
-      const r=await fetch(url,{headers:{'x-api-key':KICKOFF_KEY},signal:AbortSignal.timeout(6000)});
-      if(!r.ok) continue;
-      const data=await r.json();
-      const fixtures=data.response||data.fixtures||data.data||[];
-      if(!Array.isArray(fixtures)) continue;
-      // Filtrer World Cup (ou tout prendre si league absente)
-      const wc=fixtures.filter(function(f){
-        const lg=(f.league&&f.league.name||'').toLowerCase();
-        return !lg||lg.includes('world cup')||lg.includes('coupe')||lg.includes('mondial')||lg.includes('fifa');
-      });
-      return wc.map(function(f){
-        return {
-          home: f.teams&&f.teams.home&&f.teams.home.name||f.home_team||'?',
-          away: f.teams&&f.teams.away&&f.teams.away.name||f.away_team||'?',
-          hs: f.goals&&f.goals.home!=null?f.goals.home:(f.home_score!=null?f.home_score:0),
-          as: f.goals&&f.goals.away!=null?f.goals.away:(f.away_score!=null?f.away_score:0),
-          status: f.fixture&&f.fixture.status&&f.fixture.status.short||f.status||'',
-          elapsed: f.fixture&&f.fixture.status&&f.fixture.status.elapsed||f.elapsed||0,
-        };
-      });
-    }catch(e){ continue; }
-  }
-  return [];
-}
+// KickoffAPI désactivé — désactivé pour stabilité app
 
 function liveStatusText(m){
   const s=(m.status||'').toLowerCase();
@@ -822,13 +788,7 @@ async function load(){
     updateTicker();
     updateDZ();
     render();
-    // Récupérer les matchs LIVE — timeout 8s pour ne pas bloquer l'app
-    try{
-      liveMatches=await Promise.race([
-        fetchKickoffLive(),
-        new Promise(r=>setTimeout(()=>r([]),8000))
-      ]);
-    }catch(e){ liveMatches=[]; }
+    liveMatches=[];
     renderLiveHero();
   }catch(e){
     allMatches=mergeData(null);
