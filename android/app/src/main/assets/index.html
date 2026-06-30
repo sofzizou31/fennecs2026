@@ -516,8 +516,8 @@ const STATIC = [
   {id:'r15',home:'Argentina',away:'Cape Verde',group:'-',matchday:5,hDZ:'23:00',dateDZ:'03/07/2026',type:'r16',stadium_id:15},
   {id:'r16',home:'Colombia',away:'Ghana',group:'-',matchday:5,hDZ:'02:30',dateDZ:'04/07/2026',type:'r16',stadium_id:16},
   // 8èmes de finale (4-7 juillet — heure DZ = ET + 5h)
-  {id:'h1',home:'Canada',away:'W Pays-Bas/Maroc',group:'-',matchday:6,hDZ:'18:00',dateDZ:'04/07/2026',type:'h8',stadium_id:1},
-  {id:'h2',home:'Paraguay',away:'W Côte d\'Ivoire/Norvège',group:'-',matchday:6,hDZ:'22:00',dateDZ:'04/07/2026',type:'h8',stadium_id:2},
+  {id:'h1',home:'Canada',away:'Morocco',group:'-',matchday:6,hDZ:'18:00',dateDZ:'04/07/2026',type:'h8',stadium_id:1},
+  {id:'h2',home:'Paraguay',away:'Norway',group:'-',matchday:6,hDZ:'22:00',dateDZ:'04/07/2026',type:'h8',stadium_id:2},
   {id:'h3',home:'Brazil',away:'W France/Suède',group:'-',matchday:6,hDZ:'21:00',dateDZ:'05/07/2026',type:'h8',stadium_id:3},
   {id:'h4',home:'W Mexique/Équateur',away:'W Angleterre/RD Congo',group:'-',matchday:6,hDZ:'01:00',dateDZ:'06/07/2026',type:'h8',stadium_id:4},
   {id:'h5',home:'W Belgique/Sénégal',away:'W USA/Bosnie',group:'-',matchday:6,hDZ:'20:00',dateDZ:'06/07/2026',type:'h8',stadium_id:5},
@@ -633,18 +633,8 @@ function mergeData(apiGames){
       ||apiMap[m.away+'|'+m.home]
       ||apiMap[normName(m.home)+'|'+normName(m.away)]
       ||null;
-    // Si l'API a une date/heure réelle, elle écrase la date statique
-    let dateDZ=m.dateDZ, hDZ=m.hDZ;
-    if(api && api.local_date){
-      const parts=(api.local_date||'').split(' ');
-      // local_date format: MM/DD/YYYY HH:MM (de convertOF)
-      if(parts[0]){
-        const dp=parts[0].split('/');
-        if(dp.length===3) dateDZ=dp[1]+'/'+dp[0]+'/'+dp[2]; // → DD/MM/YYYY
-      }
-      if(parts[1]) hDZ=parts[1];
-    }
-    return{...m, dateDZ, hDZ, _apiData:api};
+    // On garde les heures STATIQUES vérifiées — l'API fournit uniquement les scores
+    return{...m, _apiData:api};
   });
 }
 
